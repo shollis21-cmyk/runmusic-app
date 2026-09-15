@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key><string>RunMusic</string>
+    <key>CFBundleIdentifier</key><string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>CFBundleName</key><string>$(PRODUCT_NAME)</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>$(MARKETING_VERSION)</string>
+    <key>CFBundleVersion</key><string>$(CURRENT_PROJECT_VERSION)</string>
+    <key>CFBundleIconName</key><string>AppIcon</string>
+    <key>LSRequiresIPhoneOS</key><true/>
+    <key>UILaunchScreen</key><dict/>
+    <key>BGTaskSchedulerPermittedIdentifiers</key>
+    <array><string>com.runmusic.provider-refresh</string></array>
+    <key>UIBackgroundModes</key>
+    <array><string>audio</string><string>fetch</string><string>processing</string></array>
+    <key>NSHealthShareUsageDescription</key>
+    <string>RunMusic reads your running workouts and metrics to personalize music timing and training insights.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>RunMusic saves workouts recorded by the app and Apple Watch to Apple Health.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>RunMusic uses your location during a run to measure distance, pace, and course progress.</string>
+    <key>NSAppleMusicUsageDescription</key>
+    <string>RunMusic uses your Apple Music library to build playlists matched to your pace and workout.</string>
+</dict>
+</plist>

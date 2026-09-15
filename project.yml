@@ -1,0 +1,62 @@
+name: RunMusic
+options:
+  bundleIdPrefix: com.runmusic
+  xcodeVersion: "16.0"
+  minimumXcodeGenVersion: "2.41.0"
+  deploymentTarget:
+    iOS: "17.0"
+    watchOS: "10.0"
+  createIntermediateGroups: true
+packages:
+  RunMusicPackage:
+    path: .
+targets:
+  RunMusic:
+    type: application
+    platform: iOS
+    sources:
+      - path: AppTargets/iOS
+    dependencies:
+      - package: RunMusicPackage
+        product: RunMusicCore
+      - package: RunMusicPackage
+        product: RunMusicApplePlatform
+      - package: RunMusicPackage
+        product: RunMusicAppUI
+      - target: RunMusicWatch
+        embed: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.runmusic.app
+        PRODUCT_NAME: RunMusic
+        INFOPLIST_FILE: AppTargets/iOS/Info.plist
+        CODE_SIGN_ENTITLEMENTS: AppTargets/iOS/RunMusic.entitlements
+        CODE_SIGN_STYLE: Automatic
+        CURRENT_PROJECT_VERSION: "16"
+        MARKETING_VERSION: "0.16"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_VERSION: "6.0"
+        TARGETED_DEVICE_FAMILY: "1,2"
+  RunMusicWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - path: AppTargets/watchOS
+    dependencies:
+      - package: RunMusicPackage
+        product: RunMusicCore
+      - package: RunMusicPackage
+        product: RunMusicApplePlatform
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.runmusic.app.watchkitapp
+        PRODUCT_NAME: RunMusic Watch
+        INFOPLIST_FILE: AppTargets/watchOS/Info.plist
+        CODE_SIGN_ENTITLEMENTS: AppTargets/watchOS/RunMusicWatch.entitlements
+        CODE_SIGN_STYLE: Automatic
+        CURRENT_PROJECT_VERSION: "16"
+        MARKETING_VERSION: "0.16"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_VERSION: "6.0"
+        WATCHOS_DEPLOYMENT_TARGET: "10.0"
+        TARGETED_DEVICE_FAMILY: "4"
